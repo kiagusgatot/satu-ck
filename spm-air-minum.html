@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SPM Air Minum - Kementerian PUPR</title>
+    
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="detail.css">
+</head>
+<body>
+
+    <div class="timestamp-bar"><span id="live-timestamp">Memuat waktu...</span></div>
+
+    <header class="main-header">
+        <div class="logo-container">
+            <img src="assets/logo-cipta-karya.svg" alt="Logo Kementerian PUPR" class="logo">
+        </div>
+        <nav class="main-nav">
+            <a href="index.html">Beranda</a> 
+            <a href="catalog.html">Katalog Data</a>
+            <a href="#">Insight</a>
+        </nav>
+        <div class="user-profile">
+            <span>Surya Wahyudin</span>
+            <div class="avatar-circle"></div>
+            <i class="fa-solid fa-chevron-down user-profile-arrow"></i>
+        </div>
+    </header>
+
+    <main class="container">
+        <div id="detail-dashboard-view">
+            <div class="dashboard-wrapper">
+                 <div class="dashboard-header">
+                    <div>
+                        <nav class="breadcrumbs">
+                            <a href="catalog.html">Katalog Data</a>
+                            <i class="fa-solid fa-chevron-right"></i>
+                            <span>SPM Air Minum</span>
+                        </nav>
+                        <h1>Dashboard SPM Air Minum</h1>
+                    </div>
+                    <div class="header-controls">
+                        <!-- Filter dropdowns telah dihapus -->
+                        <div class="view-switcher">
+                            <button class="view-btn active" data-view="table"><i class="fa-solid fa-table"></i> Tabel</button>
+                            <button class="view-btn" data-view="map"><i class="fa-solid fa-map-location-dot"></i> Peta</button>
+                            <button class="view-btn" data-view="chart"><i class="fa-solid fa-chart-pie"></i> Grafik</button>
+                        </div>
+                        <div class="filters">
+                            <select aria-label="Filter Tahun"><option>Seluruh Tahun</option></select>
+                            <select aria-label="Filter Provinsi"><option>Seluruh Provinsi</option></select>
+                        </div>
+                    </div>
+                </div>
+                <div class="dashboard-content-full">
+                    <section class="main-view">
+                        <div id="table-view">
+                            <div class="table-content-wrapper">
+                                <table class="investment-table">
+                                    <thead>
+                                        <tr>
+                                            <th>No</th>
+                                            <th>Provinsi</th>
+                                            <th>Tahun</th>
+                                            <th>Nilai SPM</th>
+                                            <th>Status</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody></tbody>
+                                    <tfoot>
+                                        <tr>
+                                            <td colspan="5">
+                                                <div class="table-pagination-container">
+                                                    <span class="total-data-span">Total Data: 0</span>
+                                                    <div class="pagination-controls">
+                                                        <select class="pagination-select" aria-label="Item per halaman">
+                                                            <option>10</option><option>25</option><option>50</option>
+                                                        </select>
+                                                        <div class="pagination"></div>
+                                                    </div>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                    </tfoot>
+                                </table>
+                            </div>
+                            <!-- Time-lapse ditambahkan kembali -->
+                            <div class="timelapse-container">
+                                <button class="timelapse-btn" aria-label="Mulai time-lapse"><i class="fa-solid fa-play"></i> <span>Mulai time-lapse</span></button>
+                                <div class="slider-wrapper">
+                                    <span class="year-label">2015</span>
+                                    <input type="range" min="2015" max="2025" value="2015" class="timelapse-slider" aria-label="Slider tahun">
+                                    <span class="year-label">2025</span>
+                                </div>
+                            </div>
+                            <div class="view-footer"><p class="data-source">Sumber Data: Pusat Fasilitasi Infrastruktur Daerah KemenPU</p><div class="view-controls"><button title="Unduh Tabel"><i class="fa-solid fa-download"></i></button><button title="Bagikan"><i class="fa-solid fa-share-nodes"></i></button><button title="Layar Penuh"><i class="fa-solid fa-expand"></i></button></div></div>
+                        </div>
+                        <div id="map-view" class="view-hidden">
+                            <div id="map"></div>
+                             <!-- Time-lapse ditambahkan kembali -->
+                            <div class="timelapse-container">
+                                <button class="timelapse-btn" aria-label="Mulai time-lapse"><i class="fa-solid fa-play"></i> <span>Mulai time-lapse</span></button>
+                                <div class="slider-wrapper">
+                                    <span class="year-label">2015</span>
+                                    <input type="range" min="2015" max="2025" value="2015" class="timelapse-slider" aria-label="Slider tahun">
+                                    <span class="year-label">2025</span>
+                                </div>
+                            </div>
+                            <div class="view-footer"><p class="data-source">Sumber Data: Pusat Fasilitasi Infrastruktur Daerah KemenPU</p><div class="view-controls"><button title="Unduh Tabel"><i class="fa-solid fa-download"></i></button><button title="Bagikan"><i class="fa-solid fa-share-nodes"></i></button><button title="Layar Penuh"><i class="fa-solid fa-expand"></i></button></div></div>
+                        </div>
+                        <div id="chart-view" class="view-hidden">
+                            <div class="chart-wrapper"><canvas id="lineChart" aria-label="Grafik garis tren SPM Air Minum"></canvas></div>
+                             <!-- Time-lapse ditambahkan kembali -->
+                            <div class="timelapse-container">
+                                <button class="timelapse-btn" aria-label="Mulai time-lapse"><i class="fa-solid fa-play"></i> <span>Mulai time-lapse</span></button>
+                                <div class="slider-wrapper">
+                                    <span class="year-label">2015</span>
+                                    <input type="range" min="2015" max="2025" value="2015" class="timelapse-slider" aria-label="Slider tahun">
+                                    <span class="year-label">2025</span>
+                                </div>
+                            </div>
+                            <div class="view-footer"><p class="data-source">Sumber Data: Pusat Fasilitasi Infrastruktur Daerah KemenPU</p><div class="view-controls"><button title="Unduh Tabel"><i class="fa-solid fa-download"></i></button><button title="Bagikan"><i class="fa-solid fa-share-nodes"></i></button><button title="Layar Penuh"><i class="fa-solid fa-expand"></i></button></div></div>
+                        </div>
+                    </section>
+                </div>
+            </div>
+            <section class="analysis-section">
+                <h2>Analisis Data Investasi Tahun 2015-2025</h2>
+                <p>Pencapaian saat ini menunjukkan progres yang baik dengan cakupan pelayanan mencapai 43,11%. Namun, masih ada 356.901 unit layanan yang belum terlayani, sehingga perlu upaya lebih lanjut untuk mencapai target total 1.058.137. Realisasi akses layak baru (447.367) perlu terus ditingkatkan untuk memastikan kualitas dan cakupan layanan yang optimal di seluruh wilayah.</p>
+            </section>
+        </div>
+    </main>
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+    <script src="detail.js" defer></script>
+</body>
+</html>

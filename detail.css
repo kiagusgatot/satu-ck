@@ -1,0 +1,29 @@
+/* Breadcrumbs styling */
+.breadcrumbs {
+    font-size: 13px;
+    color: var(--text-secondary);
+    margin-bottom: 8px;
+}
+
+.breadcrumbs a {
+    color: var(--header-blue);
+    text-decoration: none;
+    font-weight: 500;
+}
+
+.breadcrumbs a:hover {
+    text-decoration: underline;
+}
+
+.breadcrumbs i {
+    font-size: 10px;
+    margin: 0 8px;
+}
+
+/* Override dashboard layout untuk halaman detail */
+.dashboard-content-full {
+    display: grid;
+    /* Hanya 1 kolom, mengambil seluruh ruang */
+    grid-template-columns: 1fr; 
+    gap: 25px;
+}
