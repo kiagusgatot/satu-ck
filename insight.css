@@ -1,0 +1,136 @@
+/* Styling untuk Halaman Insight */
+
+.insight-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 20px;
+    margin-bottom: 30px;
+    padding-bottom: 20px;
+    border-bottom: 1px solid var(--border-color);
+}
+.insight-header h1 {
+    font-size: 28px;
+    font-weight: 600;
+    margin: 0 0 5px 0;
+}
+.insight-header p {
+    margin: 0;
+    color: var(--text-secondary);
+    max-width: 600px;
+}
+.search-bar {
+    display: flex;
+    min-width: 300px;
+}
+.search-bar input {
+    width: 100%;
+    padding: 10px 15px;
+    border: 1px solid var(--border-color);
+    border-radius: var(--border-radius) 0 0 var(--border-radius);
+    font-family: var(--font-family);
+    font-size: 14px;
+    outline: none;
+}
+.search-bar button {
+    padding: 0 15px;
+    border: 1px solid var(--header-blue);
+    background-color: var(--header-blue);
+    color: white;
+    cursor: pointer;
+    border-radius: 0 var(--border-radius) var(--border-radius) 0;
+    transition: background-color 0.2s;
+}
+.search-bar button:hover {
+    background-color: #162c52;
+}
+
+
+.insight-content {
+    max-width: 800px; /* Lebar maksimal konten artikel */
+    margin: 0 auto; /* Pusatkan konten */
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+.insight-card {
+    background-color: #fff;
+    border: 1px solid var(--border-color);
+    border-radius: var(--border-radius);
+    padding: 25px;
+    box-shadow: var(--card-shadow);
+    transition: opacity 0.3s;
+}
+
+.insight-card.hidden {
+    display: none;
+}
+
+.card-header {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 13px;
+    font-weight: 500;
+    color: var(--text-secondary);
+    margin-bottom: 15px;
+}
+.card-header i {
+    color: var(--header-blue);
+}
+
+.card-title {
+    font-size: 22px;
+    font-weight: 600;
+    color: var(--text-primary);
+    margin: 0 0 15px 0;
+    line-height: 1.4;
+}
+
+.card-image {
+    width: 100%;
+    height: auto;
+    border-radius: var(--border-radius);
+    margin-bottom: 20px;
+    object-fit: cover;
+}
+
+.card-summary {
+    font-size: 15px;
+    line-height: 1.7;
+    color: var(--text-secondary);
+    margin: 0 0 25px 0;
+}
+
+.card-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.card-button {
+    background-color: var(--header-blue);
+    color: white;
+    border: 1px solid var(--header-blue);
+    padding: 8px 20px;
+    border-radius: var(--border-radius);
+    font-family: var(--font-family);
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+.card-button:hover {
+    background-color: #162c52;
+}
+.card-button.primary {
+    background-color: var(--header-blue);
+    color: white;
+    border-color: var(--header-blue);
+}
+.card-button.primary:hover {
+    background-color: #162c52;
+}
+
+/* PERUBAHAN: Aturan CSS untuk .card-actions telah dihapus karena tidak lagi digunakan */

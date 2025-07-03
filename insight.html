@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Insight - Kementerian PUPR</title>
+    
+    <!-- Library CSS Pihak Ketiga -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- Stylesheet Kustom -->
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="insight.css">
+</head>
+<body>
+
+    <div class="timestamp-bar"><span id="live-timestamp">Memuat waktu...</span></div>
+
+    <header class="main-header">
+        <div class="logo-container">
+            <img src="assets/logo-cipta-karya.svg" alt="Logo Kementerian PUPR" class="logo">
+        </div>
+        <nav class="main-nav">
+    <!-- Tautan ke halaman Beranda -->
+    <a href="index.html">Beranda</a> 
+    <!-- Tautan ke halaman Katalog Data -->
+    <a href="catalog.html">Katalog Data</a> 
+    <!-- Tautan ini aktif karena berada di halaman Insight -->
+    <a href="insight.html" class="active">Insight</a>
+</nav>
+
+        <div class="user-profile">
+            <span>Surya Wahyudin</span>
+            <div class="avatar-circle"></div>
+            <i class="fa-solid fa-chevron-down user-profile-arrow"></i>
+        </div>
+    </header>
+
+    <!-- Konten Utama Insight -->
+    <main class="container">
+        <div class="insight-header">
+            <div>
+                <h1>Insight</h1>
+                <p>Temukan artikel, berita, dan data relevan dengan mudah melalui judul, kategori, atau topik.</p>
+            </div>
+            <div class="search-bar">
+                <input type="text" id="insight-search-input" placeholder="Cari artikel...">
+                <button aria-label="Cari"><i class="fa-solid fa-search"></i></button>
+            </div>
+        </div>
+
+        <div class="insight-content">
+            <!-- Artikel 1 -->
+            <article class="insight-card">
+                <div class="card-header">
+                    <i class="fa-solid fa-newspaper"></i>
+                    <span>Berita</span>
+                </div>
+                <h2 class="card-title">Dorong Akselerasi Akses Air Minum, Ditjen Cipta Karya Tegaskan Transformasi Tata Kelola pada IWWEF 2025</h2>
+                <img src="https://placehold.co/800x450/1e3a6b/ffffff?text=IWWEF+2025" alt="Gambar acara IWWEF 2025" class="card-image">
+                <p class="card-summary">
+                    Direktorat Jenderal Cipta Karya terus berkomitmen dalam mempercepat transformasi kelembagaan penyelenggaraan Sistem Penyediaan Air Minum (SPAM) melalui dukungan di ajang Indonesia Water and Wastewater Expo and Forum (IWWEF) 2025.
+                </p>
+                <div class="card-footer">
+                    <button class="card-button">Lihat Selengkapnya</button>
+                    <!-- PERUBAHAN: Mengganti class "card-actions" menjadi "view-controls" -->
+                    <div class="view-controls">
+                        <button title="Bagikan"><i class="fa-solid fa-share-nodes"></i></button>
+                        <button title="Unduh"><i class="fa-solid fa-download"></i></button>
+                    </div>
+                </div>
+            </article>
+
+            <!-- Artikel 2 -->
+            <article class="insight-card">
+                <div class="card-header">
+                    <i class="fa-solid fa-bullhorn"></i>
+                    <span>Pengumuman</span>
+                </div>
+                <h2 class="card-title">Pemerintah Siapkan Transformasi Sektor Air Minum dan Sanitasi</h2>
+                <img src="https://placehold.co/800x450/3498db/ffffff?text=Transformasi+Air+Minum" alt="Gambar transformasi air minum dan sanitasi" class="card-image">
+                <p class="card-summary">
+                    Direktur Jenderal Cipta Karya Kementerian PUPR, Diana Kusumastuti, memberikan keynote speech pada sesi "Mempercepat Penyediaan Air Minum" dalam rangkaian Indonesia Water & Wastewater Expo and Forum (IWWEF) 2025 di Jakarta Convention Center (JCC) pada hari Rabu.
+                </p>
+                <div class="card-footer">
+                    <button class="card-button primary">Lihat Selengkapnya</button>
+                     <!-- PERUBAHAN: Mengganti class "card-actions" menjadi "view-controls" -->
+                     <div class="view-controls">
+                        <button title="Bagikan"><i class="fa-solid fa-share-nodes"></i></button>
+                        <button title="Unduh"><i class="fa-solid fa-download"></i></button>
+                    </div>
+                </div>
+            </article>
+            
+            <!-- Artikel lainnya bisa ditambahkan di sini -->
+
+        </div>
+    </main>
+
+    <script src="insight.js" defer></script>
+</body>
+</html>
